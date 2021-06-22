@@ -2,6 +2,7 @@ package com.selenium.TestCase;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
@@ -13,13 +14,10 @@ public class BaseClass {
 
 	@BeforeClass
 	public void Base() {
-		
-		
-		System.setProperty("webdriver.chrome.driver",System.getProperty("user.dir")+"//Drivers//chromedriver.exe");
-		driver=new ChromeDriver();
-		
+		System.setProperty("webdriver.gecko.driver",System.getProperty("user.dir")+"//Driver//geckodriver.exe");
+		driver=new FirefoxDriver();
 	}
-@AfterClass
+	@AfterClass
 	public void TearDown(){
 		driver.quit();
 		
